@@ -12,7 +12,5 @@ contract greeting{
         greeting = _greeting;
     }
 
-    function showGreeting() public view returns(string memory){
-        return greeting;
-    }
+    
 }
