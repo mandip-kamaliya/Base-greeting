@@ -2,18 +2,18 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
-import {greeting} from "../src/greeting.sol";
+import {Greeting} from "../src/greeting.sol";
 
-contract greetingScript is Script {
+contract deployGreeting is Script {
 
     
 
-    function run() external returns(greeting) {
+    function run() external returns(Greeting) {
         uint256 deployedPrivateKey = vm.envUint("PRIVATE_KEY");
         string memory initialGreeting = "HELOOOO";
         vm.startBroadcast(deployedPrivateKey);
 
-        greeting greetingcontract = new greeting(initialGreeting);
+        Greeting greetingcontract = new Greeting(initialGreeting);
 
         vm.stopBroadcast();
 
